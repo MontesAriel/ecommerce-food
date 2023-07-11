@@ -9,7 +9,7 @@ export const FoodContext = createContext({
     updateSearchQuery: () => {}
   });
 
-// Crea el componente proveedor del contexto
+
 export const FoodProvider = ({ children }) => {
   const [foods, setFoods] = useState([]);
   const [cart, setCart] = useState([]);
@@ -17,8 +17,8 @@ export const FoodProvider = ({ children }) => {
   useEffect(() => {
     const fetchFoods = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "foods"));
-        const fetchedFoods = querySnapshot.docs.map((doc) => doc.data());
+        const querySnapshot = await getDocs(collection(db, "foods"));      
+        const fetchedFoods = querySnapshot?.docs?.map((doc) => doc?.data());      
         setFoods(fetchedFoods);
       } catch (error) {
         console.error("Error fetching foods:", error);

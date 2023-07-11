@@ -47,7 +47,7 @@ const ShoppingCart = () => {
             <h5>Price</h5>
           </div>
           {/* Products */}
-          <div className="h-[400px] md:h-[700px] lg:h-[540px] overflow-scroll">
+          <div style={{paddingBottom:'50px'}}className="h-[400px] md:h-[700px] lg:h-[540px] overflow-y-auto scrollbar-hide">
             {/* Product */}
             {cart.map((product) => (
               <div key={product.description} className="bg-[#262837] p-4 rounded-xl mb-4">
